@@ -1,0 +1,26 @@
+{% extends "base.twig" %}
+
+{% block window_title %}
+    {{ window_title }}
+{% endblock %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+    {{ body | raw }}
+    
+    <ul>
+    {% for child_node in child_nodes %}
+        <li>
+            <a href="{{ child_node.route }}">
+                {{ child_node.title }}
+            </a>
+            <p class="summary">
+                {{ child_node.body }}
+            </p>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

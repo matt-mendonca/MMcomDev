@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+    {% include '@admin/header.twig' %}
+    <body>
+        <div class="off-canvas-wrap">
+            <div class="inner-wrap">
+                <aside class="left-off-canvas-menu">
+                    <ul class="top-menu">
+                        <li class="front-page-link">
+                            <i class="fi-home"></i>
+                            <a href="/">Front Page</a>
+                        </li>
+                        <li class="dashboard-link">
+                            <i class="fi-graph-bar"></i>
+                            <a href="/admin">Dashboard</a>
+                        </li>
+                        <li class="account-link">
+                            <i class="fi-torso"></i>
+                            <a href="/admin/account">My Account</a>
+                        </li>
+                        <li class="content-link">
+                            <i class="fi-page"></i>
+                            <a href="/admin/content" data-sub-menu="content">Content</a>
+                            <i class="fi-play"></i>
+                        </li>
+                        <li class="users-link">
+                            <i class="fi-torsos"></i>
+                            <a href="/admin/users" data-sub-menu="users">Users</a>
+                            <i class="fi-play"></i>
+                        </li>
+                        <li class="settings-link">
+                            <i class="fi-widget"></i>
+                            <a href="/admin/settings">Settings</a>
+                        </li>
+                        <li class="logout-link">
+                            <i class="fi-power"></i>
+                            <a href="/admin/logout">Logout</a>
+                        </li>
+                    </ul>
+                    <ul class="sub-menu content">
+                        <li class="add-content-link">
+                            <i class="fi-page-add"></i>
+                            <a href="/admin/content/add-content">Add Content</a>
+                        </li>
+                        <li class="pages-link">
+                            <i class="fi-page"></i>
+                            <a href="/admin/content/pages">Pages</a>
+                        </li>
+                        <li class="posts-link">
+                            <i class="fi-page-filled"></i>
+                            <a href="/admin/content/posts">Posts</a>
+                        </li>
+                        <li class="archives-link">
+                            <i class="fi-page-copy"></i>
+                            <a href="/admin/content/archives">Archives</a>
+                        </li>
+                    </ul>
+                    <ul class="sub-menu users">
+                        <li class="add-user-link">
+                            <i class="fi-torsos-all"></i>
+                            <a href="/admin/users/add-user">Add User</a>
+                        </li>
+                    </ul>
+                </aside>
+
+                <!-- main content goes here -->
+                <div class="main-content">
+                    <h2 class="main-menu-toggle">
+                        <a class="left-off-canvas-toggle"><i class="fi-list"></i></a>
+                    </h2>
+
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <ul class="breadcrumbs">
+                                {% block breadcrumbs %}
+                                    {% for uri, breadcrumb in breadcrumbs %}
+                                        <li><a href="{{ uri }}">{{ breadcrumb }}</a></li>
+                                    {% endfor %}
+                                    <li class="current">{{ title }}</li>
+                                {% endblock %}
+                            </ul>
+
+                            <div class="panel">
+                                {% block body %}{% endblock %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="exit-off-canvas"></a>
+                </div>
+            </div>
+        </div>
+
+        {% include '@admin/footer.twig' %}
+    </body>
+</html>

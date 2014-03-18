@@ -1,0 +1,232 @@
+/* Gerenal 
+    
+    green: #0DD49D;
+    green hover: #1A9E7A;
+
+    blue: #2ba6cb;
+    blud hover: #016C8B;
+*/
+
+    a,
+    .logo,
+    .tagline,
+    .menu-toggle i {
+        transition: color 0.5s;
+    }
+
+    p,
+    li {
+        font-weight: 300;
+    }
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .content-container {
+        opacity: 0;
+
+        transition: opacity 0.15s, -webkit-transform 0.25s;
+    }
+
+    .loaded .content-container {
+        opacity: 1;
+    }
+
+/* Banner */
+    .banner {
+        background: #444;
+        box-shadow: 0 10px 8px -6px #ccc;
+        text-align: center;
+        padding: 1em;
+    }
+
+        .logo, 
+        .tagline,
+        .menu-toggle {
+            display: inline-block;
+            margin: 0 0.15em;
+            color: #fff;
+        }
+
+        .logo {
+            font-family 'Raleway';
+            font-weight: 100;
+        }
+
+        .tagline {
+            font-family: 'Crimson Text';
+            font-weight: 500;
+        }
+
+        .menu-toggle-columns {
+            padding-left: 0;
+        }
+
+            .menu-toggle {
+                margin-top: 0.12em;
+                float: left;
+            }
+
+        a:hover .logo,
+        a:focus .logo,
+        a:hover .tagline,
+        a:focus .tagline,
+        .menu-open .menu-toggle,
+        .menu-toggle:hover,
+        .menu-toggle:focus {
+            color: #0DD49D;
+        }
+
+/* Menu */
+    .menu {
+        margin-top: 1em;
+    }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+            .menu i,
+            .menu a {
+                transition: all 0.5s;
+            }
+
+            .menu i {
+                margin-right: 0.5em;
+            }
+
+            .menu .code i {
+                margin-right: 0.6em;
+            }
+
+            .menu a {
+                font-family: 'Raleway';
+                font-weight: 300;
+            }
+
+            .menu .home a {
+                color: #0DD49D;
+            }
+
+            .menu:hover li:hover i,
+            .menu:focus li:focus i {
+                color: #000;
+            } 
+
+            .menu:hover li:hover a,
+            .menu:focus li:focus a {
+                color: #1A9E7A;
+            }
+
+            .menu:hover li.code:hover a,
+            .menu:focus li.code:focus a {
+                color: #016C8B;
+            }
+            
+/* Mobile Menu */
+    .mobile.menu {
+        transition: -webkit-transform 0.25s;     
+    }
+
+    .mobile.menu {
+        margin-top: 0.25em;
+        position: fixed;
+        width: 150px;
+        -webkit-transform: translateX(-150px);
+        transform: translateX(-150px);  
+    }
+
+    .menu-open .mobile.menu {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+
+    .menu-open .content-container {
+        -webkit-transform: translateX(150px);
+        transform: translateX(150px);
+    }
+    
+
+/* Footer */
+    .footer {
+        text-align: center;
+    }
+        .social li {
+            display: inline-block;
+            margin: 0 0.5em;
+            font-size: 2.25em;
+        }
+        
+        .social a {
+            color: #0DD49D;
+            text-shadow: 0 0 2px #fff;
+            
+            transition: all 0.5s;
+        }
+        
+        .no-touch .social:hover a {
+            color: transparent;
+            text-shadow: 0 0 2px #0DD49D;
+        }
+        
+        .no-touch .social:hover a:hover,
+        .no-touch .social:hover a:focus {
+            color: #1A9E7A;
+            text-shadow: 0 0 0 #fff;
+        }
+
+/* Content */
+    .main {
+        margin-top: 1.5em;
+    }
+
+        .content h1,
+        .content h2,
+        .content h3,
+        .content h4,
+        .content h5,
+        .content h6 {
+            font-family: 'Crimson Text';
+        }
+
+        .content a,
+        .content-title {
+            color: #0DD49D;
+        }
+
+        .content .breadcrumbs {
+            margin: 0;
+            display: inline-block;
+        }
+
+        h1.content-title {
+            font-family: 'Raleway';
+            font-weight: 100;
+        }
+
+        .content a:hover,
+        .content a:focus {
+            color: #1A9E7A;
+        }
+
+        .content ul {
+            margin-left: 1.2em;
+        }
+
+/* Code Section */
+    .code .content-title {
+        margin-bottom: 0.25em;
+    }
+
+    .code .breadcrumbs {
+        margin-bottom: 0.5em;
+    }
+
+/* Mobile */
+    @media all and (max-width: 767px) {
+        .banner {
+            padding: 0.5em;
+        }
+    }

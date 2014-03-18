@@ -1,0 +1,11 @@
+{% extends "@admin/base.twig" %}
+
+{% block breadcrumbs %}
+    <li><a href="/admin">Dashboard</a></li>
+    <li class="current">{{ title }}</li>
+{% endblock %}
+
+{% block body %}
+    <h3>{{ title }}</h3>
+    <p>{{ body | raw }}</p>
+{% endblock %}

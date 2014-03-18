@@ -1,0 +1,40 @@
+{% verbatim %}
+<script type="text/x-handlebars" id="posts">
+    <ul class="breadcrumbs">
+        <li>{{#link-to 'dashboard'}}Dashboard{{/link-to}}</li>
+        <li>{{#link-to 'content'}}Content{{/link-to}}</li>
+        <li class="current">Posts</li>
+    </ul>
+
+    <div class="row">
+        <div class="medium-3 columns">
+            <ul>
+                {{#each}}
+                    <li>
+                        {{#link-to 'post' this}}
+                            <h5>{{title}}</h5>
+                            <p>{{summary_text}}</p>
+                        {{/link-to}}
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="medium-9 columns">
+            {{outlet}}
+        </div>
+    </div>
+</script>
+
+<script type="text/x-handlebars" id="posts/index">
+    <div class="panel">
+        <p>Select a Post</p>
+    </div>
+</script>
+{% endverbatim %}
+
+<script type="text/x-handlebars" id="post">
+    <div class="panel">
+        {% include 'admin_templates/edit.twig' %}
+    </div>
+</script>

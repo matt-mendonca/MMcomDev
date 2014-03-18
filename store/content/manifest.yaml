@@ -1,0 +1,40 @@
+1:
+    route: /
+    type: page
+    template: main.twig
+    active: true
+    owner: 1
+    last_updated_by: 1
+    created_date: '2014-03-14'
+    last_updated_on: '2014-03-14'
+    title: Hello.
+2:
+    route: /code
+    type: archive
+    template: archive.twig
+    active: true
+    owner: 1
+    last_updated_by: 1
+    created_date: '2014-03-14'
+    last_updated_on: '2014-03-14'
+    title: Code.
+3:
+    route: /code/dom-mutations
+    type: post
+    template: code-article.twig
+    active: true
+    owner: 1
+    last_updated_by_id: 1
+    created_date: '2014-03-14'
+    last_updated_on: '2014-03-14'
+    title: 'DOM Mutations. The horror! Gasp!! BatMan'
+4:
+    route: /code/performant-views
+    type: post
+    template: code-article.twig
+    active: true
+    owner: 1
+    last_updated_by: 1
+    created_date: '2014-03-14'
+    last_updated_on: '2014-03-14'
+    title: 'Performant, complex, scalable views.'

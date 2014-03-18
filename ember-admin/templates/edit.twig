@@ -1,0 +1,38 @@
+{% verbatim %}
+<form data-abide>
+    <div class="id-field">
+        <h4>ID: {{id}}</h4>
+    </div>
+    <div class="title-field">
+        <label>Title <small>required</small>
+            {{input type="text" value=title required="true" pattern="[a-zA-Z]+"}}
+        </label>
+        <small class="error">Title is required and must be a string.</small>
+    </div>
+
+    <div class="type-field">
+        <label>type <small>required</small>
+            {{input type="text" value=type required="true" pattern="[a-zA-Z]+"}}
+        </label>
+        <small class="error">type is required and must be a string.</small>
+    </div>
+
+    <div class="route-field">
+        <label>Route <small>required</small>
+            {{input type="text" value=route required="true" pattern="[a-zA-Z]+"}}
+        </label>
+        <small class="error">Route is required and must be a string.</small>
+    </div>
+
+    <div class="template-field">
+        <label>Template <small>required</small>
+            {{input type="text" value=template required="true" pattern="[a-zA-Z]+"}}
+        </label>
+        <small class="error">Template is required and must be a string.</small>
+    </div> 
+    
+    {{textarea class="wysiwyg" value=body}}
+    <button class="success" {{action 'saveNode'}}>Save</button>
+    <button class="alert" {{action 'cancelEdit'}}>Cancel</button>
+</form>
+{% endverbatim %}

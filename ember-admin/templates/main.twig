@@ -1,0 +1,28 @@
+<script type="text/x-handlebars">
+    <div class="off-canvas-wrap">
+        <div class="inner-wrap">
+            <aside class="left-off-canvas-menu">
+                {% include 'admin_templates/menu.twig' %}
+            </aside>
+
+            <!-- main content goes here -->
+            <div class="main-content">
+                <h2 class="main-menu-toggle"><a class="left-off-canvas-toggle"><i class="fi-list"></i></a></h2>
+                
+                {% verbatim %}
+                {{outlet}}
+                {% endverbatim %}
+
+                <a class="exit-off-canvas"></a>
+            </div>
+        </div>
+    </div>
+</script>
+
+{% include 'admin_templates/dashboard.twig' %}
+{% include 'admin_templates/users.twig' %}
+{% include 'admin_templates/content.twig' %}
+{% include 'admin_templates/pages.twig' %}
+{% include 'admin_templates/posts.twig' %}
+{% include 'admin_templates/archives.twig' %}
+{% include 'admin_templates/settings.twig' %}

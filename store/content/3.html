@@ -1,0 +1,44 @@
+<h4>Say what? NOOOO!</h4>
+<p>
+    How frustraiting is it when you are working with someone else's asset and they don't 
+    have a good API? Example, you need to modify some content, for some reason (probably a
+    designer), and said content is provided ansynchronously...and you don't control it.
+</p>
+<p>
+    Hopefully there is some event that triggers, like $('document').on('muh-code-is-ready', doStuff). 
+    Ah, but not today. Well, damn. No doc.ready, or window.load is going to get you out of this. 
+    I know; you're thinking about setTimeOut, but please don't. 
+</p>
+<p>
+    Instead consider the following:
+</p>
+<ul>
+    <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Events/Mutation_events" target="_blank">
+            DOM muation events, which kind of suck, but are easy to use.
+        </a>
+    </li>
+    <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver" target="_blank">
+            DOM muation observers, which are no kinds of suck, but are a pain to use.
+        </a>
+    </li>
+    <li>
+        <a href="https://github.com/matt-mendonca/jQuery-Insert-Mutation-Listener" target="_blank">
+            My plugin, which is really easy to use, but kind of sucks at the moment (when I get time
+            it will make it better, pinky promise).
+        </a>
+    </li>
+</ul>
+<p>
+    Please note, that neither Mutation Events, nor Mutation Observers have solid browser support.
+    In short, do not rely on them for functionality, rather use them for progressive enhancement.
+</p>
+<p>
+    Lets take a quick overview of each.
+</p>
+<h4>DOM Mutation Events</h4>
+<p>
+    Mutation Events have been around the longest. Since they are an event you <em>can</em> bind to them
+    like other events:
+</p>

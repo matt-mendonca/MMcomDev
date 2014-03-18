@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    {% include '@admin/header.twig' %}
+    <body>
+        <div class="row">
+            <div class="medium-12 columns">
+                <form data-abide action="/admin/login_check" method="post">
+                    <fieldset>
+                        <legend>{{ title }}</legend>
+                        
+                        <h4 class="warning">{{ error }}</h4>
+                        
+                        <div class="username-field">
+                            <input type="text" name="_username" placeholder="Username" value="{{ last_username }}" required />
+                            <small class="error">Name is required.</small>
+                        </div>
+
+                        <div class="password-field">
+                            <input type="password" name="_password" placeholder="Password" value="" required />
+                            <small class="error">Password is required.</small>
+                        </div>
+
+                        <input class="button radius success" type="submit"/>
+                    </fieldset>
+                </form> 
+
+                <div>{{ body }}</div>
+            </div>
+        </div>
+
+        {% include '@admin/footer.twig' %}
+    </body>
+</html>

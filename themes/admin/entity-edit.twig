@@ -1,0 +1,17 @@
+{% extends "@admin/base.twig" %}
+
+{% block body %}
+    <h3>{{ title }}</h3>
+    <p>{{ body }}</p>
+
+    <form action="#" method="post">
+        {{ form_widget(form) }}
+
+        <input class="button radius success" type="submit" value="Save" />
+    </form>
+    <a class="button radius alert" href="{{ delete_uri }}">Delete</a>
+    <a class="button radius secondary" href="{{ cancel_uri }}">Cancel</a>
+    
+    {{ footer | raw }}
+    
+{% endblock %}

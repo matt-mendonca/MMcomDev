@@ -1,0 +1,8 @@
+site_title: MattMendonca
+summary_text_length: 200
+time_zone: America/New_York
+front_end_theme: mmcom
+admin_theme: admin
+control_panel: true
+cache: true
+debug: true

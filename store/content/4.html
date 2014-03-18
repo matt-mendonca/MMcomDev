@@ -1,0 +1,54 @@
+<h4>Sounds good, right?</h4>
+<p>
+    The Views module is stellar. It saves time, is easy to use, helps create complex db queries,
+    and renders the results. However, every node field is a separate table, so getting a complete
+    node with lots of fields means lots of joins. This means a slower, more memory hungry query. Add in 
+    relational fields - like a term reference field - and the problem is compounded.
+    Really, I've seen queries as bigger than this paragraph.
+</p>
+<p>
+    Full disclosure, this only happens at large scale with complex data. Are you going to need my proposed solution
+    running a blog? No. The new hot web app? Possibly. I digress... 
+</p>
+<p> 
+    In the case of a massive view that is either too slow or exhausting all of your memory, you have two choices (<em>obviously</em>):
+</p>
+<ol style="margin-left: 3em;">
+    <li>Improve the hardware.</li>
+    <li>Improve the software.</li>
+</ol>
+<p>
+    Now this wouldn't make for an interesting read if all I did was tell you to buy a better server. 
+    Certainly not after all that build up. Instead I'm going to talk about my approach to the problem.
+</p>
+<p>
+    In a nutshell, you set up a table in the database with the content you want to query, 
+    and have a column for every field. You know what that means, no joins! This set up is good for
+    data that <strong>does not change structure very often</strong>. Sounds asinine, I know, but it 
+    works - well.
+</p>
+<p>
+    Here is the outline:
+</p>
+<ul>
+    <li>
+        Use the data module to build your custom table - it provides built Views support. 
+        <strong>This saves a lot of time</strong>.
+    </li>
+    <li>
+        Create a custom module that has hooks for:
+        <ul>
+            <li>Node insert</li>
+            <li>Node update</li>
+            <li>Node delete</li>
+        </ul>
+    </li>
+    <li>
+        In your module's hooks, whenever a change is made to a node, save, update, or delete a copy of it in your table.
+    </li>
+</ul>
+<p>
+    Make sense? Probably not, try something along the lines of 
+    <a href="https://gist.github.com/matt-mendonca/7521629" target="_blank">gist.github.com/matt-mendonca/7521629</a>
+</p>
+<script src="https://gist.github.com/matt-mendonca/7521629.js"></script>

@@ -1,0 +1,76 @@
+{% verbatim %}
+<script type="text/x-handlebars" id="content">
+    <ul class="breadcrumbs">
+        <li>{{#link-to 'dashboard'}}Dashboard{{/link-to}}</li>
+        <li class="current">Content</li>
+    </ul>
+
+    <div class="panel">
+        <ul>
+            <li>
+                <i class="fi-page-add"></i>
+                {{#link-to 'add-content'}}Add Content{{/link-to}}
+            </li>
+            <li>
+                <i class="fi-page"></i>
+                {{#link-to 'pages'}}Pages{{/link-to}}
+            </li>
+            <li>
+                <i class="fi-page-filled"></i>
+                {{#link-to 'posts'}}Posts{{/link-to}}
+            </li>
+            <li>
+                <i class="fi-page-copy"></i>
+                {{#link-to 'archives'}}Archives{{/link-to}}
+            </li>
+        </ul>
+    </div>
+</script>
+{% endverbatim %}
+
+
+{% verbatim %}
+<script type="text/x-handlebars" id="add-content">
+    <ul class="breadcrumbs">
+        <li>{{#link-to 'dashboard'}}Dashboard{{/link-to}}</li>
+        <li>{{#link-to 'content'}}Content{{/link-to}}</li>
+        <li class="current">Add Content</li>
+    </ul>
+
+    <div class="panel">
+        <form data-abide>
+            <div class="title-field">
+                <label>Title <small>required</small>
+                    {{input type="text" required="true" pattern="[a-zA-Z]+"}}
+                </label>
+                <small class="error">Title is required and must be a string.</small>
+            </div>
+
+            <div class="type-field">
+                <label>type <small>required</small>
+                    {{input type="text" required="true" pattern="[a-zA-Z]+"}}
+                </label>
+                <small class="error">type is required and must be a string.</small>
+            </div>
+
+            <div class="route-field">
+                <label>Route <small>required</small>
+                    {{input type="text" required="true" pattern="[a-zA-Z]+"}}
+                </label>
+                <small class="error">Route is required and must be a string.</small>
+            </div>
+
+            <div class="template-field">
+                <label>Template <small>required</small>
+                    {{input type="text" required="true" pattern="[a-zA-Z]+"}}
+                </label>
+                <small class="error">Template is required and must be a string.</small>
+            </div> 
+            
+            {{textarea class="wysiwyg"}}
+            <button class="success" {{action 'createNode'}}>Save</button>
+            <button class="alert" {{action 'cancelEdit'}}>Cancel</button>
+        </form>
+    </div>
+</script>
+{% endverbatim %}

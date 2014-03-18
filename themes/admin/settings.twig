@@ -1,0 +1,14 @@
+{% extends "@admin/base.twig" %}
+
+{% block body %}
+    <h3>{{ title }}</h3>
+    <p>{{ body }}</p>
+
+    <a class="button radius alert" href="/admin/settings/clear-cache">Clear Cache</a>
+    <form action="#" method="post">
+        {{ form_widget(form) }}
+
+        <input class="button radius success" type="submit" value="Save" />
+    </form>
+    <a class="button radius secondary" href="/admin">Cancel</a>
+{% endblock %}

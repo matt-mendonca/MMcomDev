@@ -1,0 +1,207 @@
+/* General Layout */
+    body {
+        opacity: 1;
+
+        transition: opacity 0.75s;
+    }
+
+    body.loading {
+        opacity: 0;
+    }
+
+    .ember-view {
+        height: 100%;
+    }
+    
+    .off-canvas-wrap,
+    .inner-wrap,
+    .main-content {
+        height: 100%;
+    }
+
+    .main-content,
+    .left-off-canvas-menu {
+        padding: 0.5em 1em;
+    }
+
+    .trumbowyg-box {
+        width: 100%;
+        margin: 1em 0;
+    }
+
+    .trumbowyg-editor {
+        box-shadow: inset 0 0 7px #bbb;
+        margin: 0 auto;
+        background: #fff;
+    }
+
+/* Main Content */
+    .inner-wrap {
+        background: #000;
+    }
+
+    .main-content {
+        background: #fff;
+
+        transition: opacity 0.5s;
+    }
+
+    .move-right .main-content {
+        opacity: 0.5;
+    }
+
+    .move-right .main-content:hover {
+        opacity: 0.75;
+    }
+
+    .move-right a.exit-off-canvas:hover {
+        background: none;
+    }
+
+/* Off Canvas Nav */
+    .main-menu-toggle {
+        display: inline-block;
+        float: left;
+        margin: -0.1em 0.5em 0 0;    
+    }
+
+    .left-off-canvas-menu {
+        box-sizing: border-box;
+        border-right: solid 1px;
+        background: #000;
+        overflow: hidden;
+    }
+
+        .left-off-canvas-menu ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin-left: 0;
+            padding: 1em 0;
+            background: #222;
+            list-style: none;
+            font-size: 1.25em;
+            font-weight: 100;
+            
+            transition: all 0.5s;
+        }
+
+        .left-off-canvas-menu.expanded .top-menu {
+            opacity: 0.55;
+        }
+
+        .left-off-canvas-menu.expanded .top-menu:hover {
+            opacity: 0.75;
+        }
+
+
+        .left-off-canvas-menu .sub-menu {
+            border-left: solid 1px #111;
+            
+            -webkit-transform:translateX(250px);
+             -moz-transform:translateX(250px);
+              -ms-transform:translateX(250px);
+               -o-transform:translateX(250px);
+                  transform:translateX(250px);
+        }
+
+        .left-off-canvas-menu.expanded .sub-menu.active {
+            -webkit-transform:translateX(47px);
+             -moz-transform:translateX(47px);
+              -ms-transform:translateX(47px);
+               -o-transform:translateX(47px);
+                  transform:translateX(47px);
+        }
+
+            .left-off-canvas-menu li,
+            .left-off-canvas-menu a,
+            .left-off-canvas-menu i,
+            .left-off-canvas-menu li:hover a:hover,
+            .left-off-canvas-menu li:hover a:focus,
+            .left-off-canvas-menu li:focus a:hover,
+            .left-off-canvas-menu li:focus a:focus,
+            .left-off-canvas-menu li:hover i:last-child:hover,
+            .left-off-canvas-menu li:hover i:last-child:focus,
+            .left-off-canvas-menu li:focus i:last-child:hover,
+            .left-off-canvas-menu li:focus i:last-child:focus {
+                color: #fff;
+            }
+            
+            .left-off-canvas-menu li:hover a:hover,
+            .left-off-canvas-menu li:hover a:focus,
+            .left-off-canvas-menu li:focus a:hover,
+            .left-off-canvas-menu li:focus a:focus,
+            .left-off-canvas-menu li:hover i:last-child:hover,
+            .left-off-canvas-menu li:hover i:last-child:focus,
+            .left-off-canvas-menu li:focus i:last-child:hover,
+            .left-off-canvas-menu li:focus i:last-child:focus {
+                text-shadow: none;
+            }
+            
+            .left-off-canvas-menu li {
+                padding: 0 0 0 0.75em;
+                
+                transition: background 0.5s;
+            }
+            
+            .left-off-canvas-menu li:hover,
+            .left-off-canvas-menu li:focus {
+                background: #08c;
+            }
+            
+            .left-off-canvas-menu li:hover a,
+            .left-off-canvas-menu li:focus a, 
+            .left-off-canvas-menu li:hover i:last-child,
+            .left-off-canvas-menu li:focus i:last-child {
+                color: transparent;
+                text-shadow: 0 0 1px #fff;
+            }
+
+            .left-off-canvas-menu a {
+                display: inline-block;
+                width: 150px;
+                padding-left: 17px;
+                border-left: solid 1px #222;
+                margin: 0 0 0 0.5em;
+                
+                transition: color 0.5s, text-shadow 0.5s, border 0.5s;
+            }
+            
+            .left-off-canvas-menu li:hover a,
+            .left-off-canvas-menu li:focus a,
+            .left-off-canvas-menu a.active {
+                border-left-color: #08c
+            }
+            
+            .left-off-canvas-menu i {
+                transition: opacity 0.5s, color 0.5s, text-shadow 0.5s, padding 0.15s;
+            }
+            
+                .left-off-canvas-menu i::before {
+                    width: 16px;
+                }
+                
+                .left-off-canvas-menu .top-menu i:last-child::before {
+                    width: 30px;
+                    padding-left: 10px;
+                }
+
+            .left-off-canvas-menu .top-menu i:last-child {
+                cursor: pointer; 
+            }
+        
+            .left-off-canvas-menu i:last-child:hover,
+            .left-off-canvas-menu i:last-child:focus {
+                padding-left: 4px;
+            }
+
+            .left-off-canvas-menu.expanded .top-menu li i:first-child {
+                opacity: 0.2;
+            }
+            
+            .left-off-canvas-menu.expanded .top-menu li.active i:first-child {
+                opacity: 1;
+                color: #08c;
+            }

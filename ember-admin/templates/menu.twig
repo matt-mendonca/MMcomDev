@@ -1,0 +1,53 @@
+{% verbatim %}
+<ul class="top-menu">
+    <li class="dashboard-link">
+        <i class="fi-graph-bar"></i>
+        {{#link-to 'dashboard'}}Dashboard{{/link-to}}
+    </li>
+    <li class="account-link">
+        <i class="fi-torso"></i>
+        {{#link-to 'account'}}My Account{{/link-to}}
+    </li>
+    <li class="content-link">
+        <i class="fi-page"></i>
+        {{#link-to 'content' data-sub-menu="content" }}Content{{/link-to}}
+        <i class="fi-play"></i>
+    </li>
+    <li class="users-link">
+        <i class="fi-torsos"></i>
+        <a data-sub-menu="users">Users</a>
+        <i class="fi-play"></i>
+    </li>
+    <li class="settings-link">
+        <i class="fi-widget"></i>
+        <a data-sub-menu="settings">Settings</a>
+        <i class="fi-play"></i>
+    </li>
+</ul>
+<ul class="sub-menu content">
+    <li>
+        <i class="fi-page-add"></i>
+        {{#link-to 'add-content'}}Add Content{{/link-to}}
+    </li>
+    <li>
+        <i class="fi-page"></i>
+        {{#link-to 'pages'}}Pages{{/link-to}}
+    </li>
+    <li>
+        <i class="fi-page-filled"></i>
+        {{#link-to 'posts'}}Posts{{/link-to}}
+    </li>
+    <li>
+        <i class="fi-page-copy"></i>
+        {{#link-to 'archives'}}Archives{{/link-to}}
+    </li>
+</ul>
+<ul class="sub-menu users">
+    <li><a href="#">Pages</a></li>
+    <li><a href="#">Archives</a></li>
+</ul>
+<ul class="sub-menu settings">
+    <li><a href="#">Pages</a></li>
+    <li><a href="#">Archives</a></li>
+</ul>
+{% endverbatim %}

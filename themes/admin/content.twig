@@ -1,0 +1,32 @@
+{% extends "@admin/base.twig" %}
+
+{% block body %}
+    <h3>{{ title }}</h3>
+    <p>{{ body }}</p>
+    <ul class="no-bullet">
+        <li>
+            <a class="button radius" href='/admin/content/add-content'>
+                <i class="fi-page-add"></i>
+                Add Content
+            </a>
+        </li>
+        <li>
+            <a class="button radius" href='/admin/content/pages'>
+                <i class="fi-page"></i>
+                Pages
+            </a>
+        </li>
+        <li>
+            <a class="button radius" href='/admin/content/posts'>
+                <i class="fi-page-filled"></i>
+                Posts
+            </a>
+        </li>
+        <li>
+            <a class="button radius" href='/admin/content/archives'>
+                <i class="fi-page-copy"></i>
+                Archives
+            </a>
+        </li>
+    </ul>
+{% endblock %}

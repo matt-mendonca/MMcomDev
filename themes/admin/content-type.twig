@@ -1,0 +1,17 @@
+{% extends "@admin/base.twig" %}
+
+{% block body %}
+    <h3>{{ title }}</h3>
+    <p>{{ body }}</p>
+    
+    <ul class="no-bullet">
+    {% for node in content_manifest %}
+        <li class="callout panel">
+            <a href="/admin/content/{{ node.type}}s/{{ node.id }}">
+                <h5>{{ node.title }}</h5>
+                <p>{{ node.summary }}</p>
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

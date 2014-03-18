@@ -1,0 +1,16 @@
+<!--#include file="libs/jquery-1.11.min.js" -->
+<!--#include file="libs/handlebars-1.3.min.js" -->
+<!--#include file="libs/ember-1.3.2.min.js" -->
+<!--#include file="libs/ember-data.min.js" -->
+<!--#include file="libs/trumbowyg.min.js" -->
+<!--#include file="libs/foundation.min.js" -->
+<!--#include file="libs/underscore-1.5.2.min.js" -->
+<!--#include file="admin/notion.js" -->
+<!--#include file="admin/admin.js" -->
+<!--#include file="admin/router.js" -->
+<!--#include file="admin/store.js" -->
+<!--#include file="admin/controllers/post.js" -->
+<!--#include file="admin/controllers/add-content.js" -->
+<!--#include file="admin/models/page.js" -->
+<!--#include file="admin/models/post.js" -->
+<!--#include file="admin/models/archive.js" -->
