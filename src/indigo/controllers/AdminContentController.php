@@ -78,16 +78,45 @@ class AdminContentController
             'last_updated_on' => $date
         );
 
-        $form = self::getContentForm($app, $data, $templates, $select_list_users);
-
-        $form->add('type', 'choice', array(
-            'choices' => array(
-                'page' => 'page', 
-                'post' => 'post', 
-                'archive' => 'archive'
-            )
-        ))
-        ->getForm();
+        $form = $app['form.factory']->createBuilder('form', $data)
+            ->add('id', 'integer', array(
+                'read_only' => true,
+                'disabled' => true
+            ))
+            ->add('owner', 'choice', array(
+                'choices' => $select_list_users
+            ))
+            ->add('last_updated_by', 'choice', array(
+                'choices' => $select_list_users,
+                'read_only' => true,
+                'disabled' => true
+            ))
+            ->add('created_date', 'date', array(
+                'read_only' => true,
+                'disabled' => true
+            ))
+            ->add('last_updated_on', 'date', array(
+                'read_only' => true,
+                'disabled' => true
+            ))
+            ->add('title')
+            ->add('route')
+            ->add('template', 'choice', array(
+                'choices' => $templates,
+            ))
+            ->add('active', 'checkbox', array(
+                'label' => 'Acive (only active content will be publically displayed)?',
+                'required' => false,
+            ))
+            ->add('body', 'textarea')
+            ->add('type', 'choice', array(
+                'choices' => array(
+                    'page' => 'page', 
+                    'post' => 'post', 
+                    'archive' => 'archive'
+                )
+            ))
+            ->getForm();
 
         $form->handleRequest($request);
 
@@ -212,9 +241,49 @@ class AdminContentController
             'body' => $page['node']['body']
         );
 
-        $form = self::getContentForm($app, $data, $templates, $select_list_users);
+        $form = $app['form.factory']->createBuilder('form', $data)
+            ->add('id', 'integer', array(
+                'read_only' => true,
+                'disabled' => true
+            ))
+            ->add('owner', 'choice', array(
+                'choices' => $select_list_users
+            ))
+            ->add('last_updated_by', 'choice', array(
+                'choices' => $select_list_users,
+                'read_only' => true,
+                'disabled' => true
+            ))
+            ->add('created_date', 'date', array(
+                'read_only' => true,
+                'disabled' => true
+            ))
+            ->add('last_updated_on', 'date', array(
+                'read_only' => true,
+                'disabled' => true
+            ))
+            ->add('title')
+            ->add('route')
+            ->add('template', 'choice', array(
+                'choices' => $templates,
+            ))
+            ->add('active', 'checkbox', array(
+                'label' => 'Acive (only active content will be publically displayed)?',
+                'required' => false,
+            ))
+            ->add('body', 'textarea')
+            ->add('type', 'choice', array(
+                'read_only' => true,
+                'disabled' => true,
+                'choices' => array(
+                    'page' => 'page', 
+                    'post' => 'post', 
+                    'archive' => 'archive'
+                )
+            ))
+            ->getForm();
 
-        
+        $form->handleRequest($request);
 
         if ($form->isValid()) :
             $file_system = new Filesystem();
@@ -288,7 +357,7 @@ class AdminContentController
 
     public static function getContentForm($app, $data, $templates, $select_list_users) 
     {
-        $form = $app['form.factory']->createBuilder('form', $data)
+        return $app['form.factory']->createBuilder('form', $data)
             ->add('id', 'integer', array(
                 'read_only' => true,
                 'disabled' => true
@@ -319,8 +388,6 @@ class AdminContentController
                 'required' => false,
             ))
             ->add('body', 'textarea');
-            
-        return $form;
     }
     
 }
